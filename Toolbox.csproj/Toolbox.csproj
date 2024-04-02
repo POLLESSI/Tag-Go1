@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<IremGroup>
+		<PackageReference Include="GrapeCity.Document.Imaging.Windows" Version="7.0.0" />
+		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
+		<PackageReference Include="Microsoft.IdentityModel.Tokens" Version="7.0.3" />
+		<PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+		<PackageReference Include="System.Windows.Documents.Reporting" Version="0.3.0" />
+	</IremGroup>
+
+</Project>

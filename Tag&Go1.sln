@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "[00] Database", "[00] Database", "{9A8284F8-D481-4F5D-926B-FE5C2C90D65E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "[01] BLL", "[01] BLL", "{9BBADBC0-A450-4083-9950-0BA24EFD37B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "[02] DAL", "[02] DAL", "{96DB9480-6427-4F78-88BE-225594D82F3C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "[03] API", "[03] API", "{CCD9F7B9-6A40-4BD2-8B28-C044F776A796}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "[99] Toolbox", "[99] Toolbox", "{75552F3F-83AC-4BC7-80CE-500E8438B31D}"
+	ProjectSection(SolutionItems) = preProject
+		Command.cs = Command.cs
+		Connection.cs = Connection.cs
+	EndProjectSection
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Tag&GoDb", "Tag&GoDb\Tag&GoDb.sqlproj", "{66C632FE-8046-4B13-BF77-FF7415A48FA6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tag&Go.BLL", "Tag&Go.BLL\Tag&Go.BLL.csproj", "{2FD6FD05-746A-4F32-9976-DD0756055D61}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tag&Go.DAL", "Tag&Go.DAL\Tag&Go.DAL.csproj", "{4ECEBD6E-D67A-46FB-96CB-82EBFDF9AFCE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tag&Go.API", "Tag&Go.API\Tag&Go.API.csproj", "{A1336504-6783-4EC5-B82C-1BA9E8A1DA04}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66C632FE-8046-4B13-BF77-FF7415A48FA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66C632FE-8046-4B13-BF77-FF7415A48FA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66C632FE-8046-4B13-BF77-FF7415A48FA6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{66C632FE-8046-4B13-BF77-FF7415A48FA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66C632FE-8046-4B13-BF77-FF7415A48FA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66C632FE-8046-4B13-BF77-FF7415A48FA6}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2FD6FD05-746A-4F32-9976-DD0756055D61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FD6FD05-746A-4F32-9976-DD0756055D61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FD6FD05-746A-4F32-9976-DD0756055D61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FD6FD05-746A-4F32-9976-DD0756055D61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ECEBD6E-D67A-46FB-96CB-82EBFDF9AFCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ECEBD6E-D67A-46FB-96CB-82EBFDF9AFCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ECEBD6E-D67A-46FB-96CB-82EBFDF9AFCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ECEBD6E-D67A-46FB-96CB-82EBFDF9AFCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1336504-6783-4EC5-B82C-1BA9E8A1DA04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1336504-6783-4EC5-B82C-1BA9E8A1DA04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1336504-6783-4EC5-B82C-1BA9E8A1DA04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1336504-6783-4EC5-B82C-1BA9E8A1DA04}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{66C632FE-8046-4B13-BF77-FF7415A48FA6} = {9A8284F8-D481-4F5D-926B-FE5C2C90D65E}
+		{2FD6FD05-746A-4F32-9976-DD0756055D61} = {9BBADBC0-A450-4083-9950-0BA24EFD37B8}
+		{4ECEBD6E-D67A-46FB-96CB-82EBFDF9AFCE} = {96DB9480-6427-4F78-88BE-225594D82F3C}
+		{A1336504-6783-4EC5-B82C-1BA9E8A1DA04} = {CCD9F7B9-6A40-4BD2-8B28-C044F776A796}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {196C5CD7-83CE-45C5-B2C2-DCB12FB13E33}
+	EndGlobalSection
+EndGlobal
