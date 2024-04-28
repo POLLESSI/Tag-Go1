@@ -141,5 +141,17 @@ namespace Tag_Go.API.Tools
                 Comment = vrf.Comment,
             };
         }
+        public static WeatherForecast WeatherForecastToDal(this WeatherForecastRegisterForm forecast)
+        {
+            return new WeatherForecast
+            {
+                Date = forecast.Date,
+                TemperatureC = forecast.TemperatureC,
+                Summary = forecast.Summary,
+                Description = forecast.Description,
+                Humidity = forecast.Humidity,
+                Precipitation = forecast.Precipitation,
+            };
+        }
     }
 }

@@ -79,6 +79,7 @@
     <Build Include="Programability\Functions\fHasher.sql" />
     <Build Include="Programability\Procedures\spAuth\sqlNUserLogin.sql" />
     <Build Include="Programability\Procedures\spAuth\sqlNUserRegister.sql" />
+    <Build Include="Tables\WeatherForecast.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Tag&amp;GoDb.publish.xml" />

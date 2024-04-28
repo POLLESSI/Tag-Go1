@@ -4,12 +4,12 @@ using Tag_Go.API.Tools;
 using Tag_Go.API.Dtos.Forms;
 using Tag_Go.DAL.Interfaces;
 using Tag_Go.DAL.Entities;
-using Tag_Go.BLL.Models;
-using Microsoft.AspNetCore.Authorization;
+//using Tag_Go.BLL.Models;
+//using Microsoft.AspNetCore.Authorization;
 using Tag_Go.API.Hubs;
 using System.Security.Cryptography;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-using System.Text.RegularExpressions;
+//using Microsoft.AspNetCore.Mvc.ModelBinding;
+//using System.Text.RegularExpressions;
 
 namespace Tag_Go.API.Controllers
 {

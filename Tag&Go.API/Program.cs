@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Tag_Go.BLL.Models;
+//using Tag_Go.Models.Services;
 using Microsoft.Extensions.FileSystemGlobbing.Internal.Patterns;
 using Tag_Go.BLL.Interfaces;
 
@@ -21,10 +21,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddCors(o => o.AddPolicy("mypolicy", options => options.WithOrigins("http://localhost:7168"/*, "http://localhost:"*/)
-                        .AllowCredentials()
-                        .AllowAnyHeader()
-                        .AllowAnyMethod()));
+//builder.Services.AddCors(o => o.AddPolicy("mypolicy", options => options.WithOrigins("http://localhost:7168"/*, "http://localhost:"*/)
+//                        .AllowCredentials()
+//                        .AllowAnyHeader()
+//                        .AllowAnyMethod()));
+
+builder.Services.AddCors();
 
 // SqlConnection
 
@@ -116,7 +118,7 @@ if (!app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors("mypolicy");
+app.UseCors(o => o.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
 app.UseHttpsRedirection();
 
