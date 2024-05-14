@@ -5,7 +5,7 @@ namespace Tag_Go.API.Dtos.Forms
 {
     public class WeatherForecastRegisterForm
     {
-        [DataType(DataType.DateTime)] 
+        [DataType(DataType.DateTime)]
         public DateTime Date { get; set; }
         [Required(ErrorMessage = "Celcius Temperatures are required ! ")]
         [MinLength(2)]

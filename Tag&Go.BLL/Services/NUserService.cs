@@ -48,7 +48,7 @@ namespace Tag_Go.BLL.Services
             }
         }
 
-        public NUser? Delete(Guid nUser_Id)
+        public NUser? Delete(int nUser_Id)
         {
             try
             {
@@ -67,7 +67,7 @@ namespace Tag_Go.BLL.Services
             return _nUserRepository.GetAll();
         }
 
-        public NUser? GetById(Guid nUser_Id)
+        public NUser? GetById(int nUser_Id)
         {
             try
             {
@@ -95,11 +95,11 @@ namespace Tag_Go.BLL.Services
             return null;
         }
 
-        public bool RegisterNUser(string? email, string? pwd, int person_Id, string? role_Id, int avatar_Id, string? point)
+        public bool RegisterNUser(string? email, string? pwd, int nPerson_Id, string? role_Id, int avatar_Id, string? point)
         {
             try
             {
-                _nUserRepository.RegisterNUser(email, pwd, person_Id, role_Id, avatar_Id, point);
+                _nUserRepository.RegisterNUser(email, pwd, nPerson_Id, role_Id, avatar_Id, point);
             }
             catch (Exception ex)
             {
@@ -109,7 +109,7 @@ namespace Tag_Go.BLL.Services
             return false;
         }
 
-        public void SetRole(Guid nUser_Id, string? role_Id)
+        public void SetRole(int nUser_Id, string? role_Id)
         {
             try
             {
@@ -122,11 +122,11 @@ namespace Tag_Go.BLL.Services
             }
         }
 
-        public NUser? Update(Guid nUser_Id, string? email, string? pwd, int person_Id, string? role_Id, int avatar_Id, string? point)
+        public NUser? Update(int nUser_Id, string? email, string? pwd, int nPerson_Id, string? role_Id, int avatar_Id, string? point)
         {
             try
             {
-                var updateNUser = _nUserRepository.Update(nUser_Id, email, pwd, person_Id, role_Id, avatar_Id, point);
+                var updateNUser = _nUserRepository.Update(nUser_Id, email, pwd, nPerson_Id, role_Id, avatar_Id, point);
                 return updateNUser;
             }
             catch (System.ComponentModel.DataAnnotations.ValidationException ex)

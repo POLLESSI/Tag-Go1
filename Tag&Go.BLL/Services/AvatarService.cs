@@ -80,11 +80,11 @@ namespace Tag_Go.BLL.Services
             return null;
         }
 
-        public Avatar? Update(int avatar_Id, string avatarName, string avatarUrl, string description, Guid nUser_Id)
+        public Avatar? Update(int avatar_Id, string avatarName, string avatarUrl, string description)
         {
             try
             {
-                var UpdateAvatar = _avatarRepository.Update(avatar_Id, avatarName, avatarUrl, description, nUser_Id);
+                var UpdateAvatar = _avatarRepository.Update(avatar_Id, avatarName, avatarUrl, description);
                 return UpdateAvatar;
             }
             catch (System.ComponentModel.DataAnnotations.ValidationException ex)

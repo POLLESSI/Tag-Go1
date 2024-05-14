@@ -5,9 +5,7 @@ namespace Tag_Go.API.Dtos.Forms
 {
     public class RecompenseUpdate
     {
-        [Required]
-        [DisplayName("Recompense Id : ")]
-        public int Recompense_Id { get; set; }
+        
         [Required]
         [MinLength(2)]
         [MaxLength(32)]
@@ -27,5 +25,8 @@ namespace Tag_Go.API.Dtos.Forms
         [MaxLength(4)]
         [DisplayName("Granted? : ")]
         public string? Granted { get; set; }
+        [Required]
+        [DisplayName("Recompense Id : ")]
+        public int Recompense_Id { get; set; }
     }
 }

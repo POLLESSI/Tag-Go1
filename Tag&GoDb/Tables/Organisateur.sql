@@ -3,7 +3,7 @@
 	[Organisateur_Id] INT IDENTITY,
 	[CompanyName] NVARCHAR(32) NULL,
 	[BusinessNumber] NVARCHAR(16) NOT NULL,
-	[NUser_Id] UNIQUEIDENTIFIER NOT NULL,
+	[NUser_Id] INT NOT NULL,
 	[Point] INT NULL DEFAULT 0,
 	[Active] BIT DEFAULT 1
 

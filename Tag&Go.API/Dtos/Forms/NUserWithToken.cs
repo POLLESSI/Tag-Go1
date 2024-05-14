@@ -5,7 +5,7 @@ namespace Tag_Go.API.Dtos.Forms
 {
     public class NUserWithToken
     {
-        public Guid NUser_Id { get; set; }
+        public int NUser_Id { get; set; }
         [Required(ErrorMessage = "Nick name is required")]
         [MinLength(2)]
         [MaxLength(64)]

@@ -26,7 +26,7 @@ namespace Tag_Go.API.Controllers
         {
             return Ok(_chatRepository.GetAll());
         }
-        [HttpGet("{chat_id}")]
+        [HttpGet("{chat_Id}")]
         public IActionResult GetById(int chat_Id)
         {
             return Ok(_chatRepository.GetById(chat_Id));
@@ -45,13 +45,13 @@ namespace Tag_Go.API.Controllers
             }
             return BadRequest("Registration error");
         }
-        [HttpDelete("{chat_id}")]
+        [HttpDelete("{chat_Id}")]
         public IActionResult Delete(int chat_Id)
         {
             _chatRepository.Delete(chat_Id);
             return Ok();
         }
-        [HttpOptions("{chat_id}")]
+        [HttpOptions("{chat_Id}")]
         IActionResult PrefligthRoute(int chat_Id)
         {
             return NoContent();
@@ -61,7 +61,7 @@ namespace Tag_Go.API.Controllers
         {
             return NoContent();
         }
-        [HttpPut("{chat_id}")]
+        [HttpPut("{chat_Id}")]
         IActionResult PutTodoItem(int chat_Id)
         {
             if (chat_Id < 1)

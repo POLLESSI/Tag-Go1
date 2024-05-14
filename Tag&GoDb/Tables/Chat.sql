@@ -3,12 +3,13 @@
 	[Chat_Id] INT IDENTITY,
 	[NewMessage] NVARCHAR(64) NULL,
 	[Author] NVARCHAR(32) NOT NULL,
-	[Evenement_Id] INT NULL,
+	[SendingDate] DATE DEFAULT GETDATE(),
+	[NEvenement_Id] INT NULL,
 	[Activity_Id] INT NULL,
 	[Active] BIT DEFAULT 1
 
 	CONSTRAINT [PK_Chat] PRIMARY KEY ([Chat_Id])
-	CONSTRAINT [FK_Chat_Evenement] FOREIGN KEY (Evenement_Id) REFERENCES [Evenement] ([Evenement_Id])
+	CONSTRAINT [FK_Chat_NEvenement] FOREIGN KEY (NEvenement_Id) REFERENCES [NEvenement] ([NEvenement_Id])
 )
 
 GO

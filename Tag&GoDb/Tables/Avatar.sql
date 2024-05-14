@@ -4,7 +4,6 @@
 	[AvatarName] NVARCHAR(32) NULL,
 	[AvatarUrl] NVARCHAR(2048) NOT NULL,
 	[Description] NVARCHAR(256) NOT NULL,
-	[NUser_Id] UNIQUEIDENTIFIER NULL,
 	[Active] BIT DEFAULT 1
 
 	CONSTRAINT PK_Avatar PRIMARY KEY ([Avatar_Id])

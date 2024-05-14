@@ -27,7 +27,7 @@ namespace Tag_Go.API.Controllers
         {
             return Ok(_avatarRepository.GetAll());
         }
-        [HttpGet("{avatar_id}")]
+        [HttpGet("{avatar_Id}")]
         public IActionResult GetById(int avatar_Id)
         {
             return Ok(_avatarRepository.GetById(avatar_Id));
@@ -46,16 +46,16 @@ namespace Tag_Go.API.Controllers
             }
             return BadRequest("Registration Error");
         }
-        [HttpDelete("{avatar_id}")]
+        [HttpDelete("{avatar_Id}")]
         public IActionResult Delete(int avatar_Id)
         {
             _avatarRepository.Delete(avatar_Id);
             return Ok();
         }
-        [HttpPut("{avatar_id}")]
-        public IActionResult Update(int avatar_Id, string avatarName, string avatarUrl, string description, Guid NUser_Id)
+        [HttpPut("{avatar_Id}")]
+        public IActionResult Update(int avatar_Id, string avatarName, string avatarUrl, string description)
         {
-            _avatarRepository.Update(avatar_Id, avatarName, avatarUrl, description, NUser_Id);
+            _avatarRepository.Update(avatar_Id, avatarName, avatarUrl, description);
             return Ok();
         }
         [HttpPost("update")]

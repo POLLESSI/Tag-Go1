@@ -23,8 +23,5 @@ namespace Tag_Go.API.Dtos.Forms
         [MaxLength(2048)]
         [DisplayName("Description : ")]
         public string? Description { get; set; }
-        [Required]
-        [DisplayName("Guid NUser : ")]
-        public Guid NUser_Id { get; set; }
     }
 }

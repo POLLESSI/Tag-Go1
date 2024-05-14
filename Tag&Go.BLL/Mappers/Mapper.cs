@@ -18,7 +18,7 @@ namespace Tag_Go.BLL.Mappers
                 NUser_Id = model.NUser_Id,
                 Email = model.Email,
                 Pwd = model.Pwd,
-                Person_Id = model.Person_Id,
+                NPerson_Id = model.NPerson_Id,
                 Role_Id = model.Role_Id,
             };
         }
@@ -30,8 +30,10 @@ namespace Tag_Go.BLL.Mappers
                 NUser_Id = entity.NUser_Id,
                 Email = entity.Email,
                 Pwd = entity.Pwd,
-                Person_Id = entity.Person_Id,
+                NPerson_Id = entity.NPerson_Id,
                 Role_Id = entity.Role_Id,
+                Avatar_Id = entity.Avatar_Id,
+                Point = entity.Point,
             };
         }
     }

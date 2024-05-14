@@ -20,7 +20,7 @@ namespace Tag_Go.API.Dtos.Forms
         public string? Pwd { get; set; }
         [Required(ErrorMessage = "The Person's Id is required")]
         [DisplayName("Person's Id : ")]
-        public int Person_Id { get; set; }
+        public int NPerson_Id { get; set; }
         [Required(ErrorMessage = "The rôle's Id is required")]
         [DisplayName("Rôle's Id : ")]
         public string? Role_Id { get; set; }

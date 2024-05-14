@@ -33,8 +33,8 @@ namespace Tag_Go.API.Controllers
         {
             return Ok(_userRepository.GetAll());
         }
-        [HttpGet("{nuser_id}")]
-        public ActionResult GetById(Guid nUser_Id)
+        [HttpGet("{nuser_Id}")]
+        public ActionResult GetById(int nUser_Id)
         {
             return Ok(_userRepository.GetById(nUser_Id));
         }
@@ -65,7 +65,7 @@ namespace Tag_Go.API.Controllers
         [HttpPost("register")]
         public IActionResult Register(NewNUser nUser)
         {
-            _userRepository.RegisterNUser(nUser.Email, nUser.Pwd, nUser.Person_Id, nUser.Role_Id, nUser.Avatar_Id, nUser.Point);
+            _userRepository.RegisterNUser(nUser.Email, nUser.Pwd, nUser.NPerson_Id, nUser.Role_Id, nUser.Avatar_Id, nUser.Point);
             return Ok();
         }
         [HttpPost]
@@ -80,16 +80,16 @@ namespace Tag_Go.API.Controllers
             }
             return BadRequest("Registration Error");
         }
-        [HttpDelete("nuser_id")]
-        public IActionResult Delete(Guid nUser_Id)
+        [HttpDelete("nuser_Id")]
+        public IActionResult Delete(int nUser_Id)
         {
             _userRepository.Delete(nUser_Id);
             return Ok();
         }
-        [HttpPut("nuser_id")]
-        public IActionResult Update(Guid nUser_Id, string? email, string? pwd, int person_Id, string role_Id, int avatar_Id, string? point)
+        [HttpPut("nuser_Id")]
+        public IActionResult Update(int nUser_Id, string? email, string? pwd, int nPerson_Id, string role_Id, int avatar_Id, string? point)
         {
-            _userRepository.Update(nUser_Id, email, pwd, person_Id, role_Id, avatar_Id, point);
+            _userRepository.Update(nUser_Id, email, pwd, nPerson_Id, role_Id, avatar_Id, point);
             return Ok();
         }
         [HttpPost("update")]
@@ -101,7 +101,7 @@ namespace Tag_Go.API.Controllers
             }
             return Ok(_currentNUser);
         }
-        [HttpPatch("setrole")]
+        [HttpPatch("setRole")]
         public IActionResult ChangeRole(ChangeRole role)
         {
             _userRepository.SetRole(role.NUser_Id, role.Role_Id);

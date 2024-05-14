@@ -32,11 +32,11 @@ namespace Tag_Go.API.Controllers
             _logger = logger;
             _hub = hub;
         }
-        public IEnumerable<WeatherForecast> GetForecasts()
+        public IEnumerable<WeatherForecast> Get()
         {
             return Enumerable.Range(1, 5).Select(Index => new WeatherForecast
             {
-                Date = DateTime.Now.AddDays(Index),
+                //Date = DateTime.Now.AddDays(Index),
                 //TemperatureC = TemperatureC[Random.Shared.Next(-20, 55)],
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)],
                 Description = Descriptions[Random.Shared.Next(Descriptions.Length)]
@@ -45,12 +45,12 @@ namespace Tag_Go.API.Controllers
             })
             .ToArray();
         }
-        [HttpGet]
-        public ActionResult<IEnumerable<WeatherForecast>> GetAll()
-        {
-            var activeWeatherForecasts = _forecastRepository.GetAll();
-            return Ok(activeWeatherForecasts);
-        }
+        //[HttpGet]
+        //public ActionResult<IEnumerable<WeatherForecast>> GetAll()
+        //{
+        //    var activeWeatherForecasts = _forecastRepository.GetAll();
+        //    return Ok(activeWeatherForecasts);
+        //}
         //public IActionResult GetAll()
         //{
         //    return Ok(_forecastRepository.GetAll());
@@ -58,7 +58,7 @@ namespace Tag_Go.API.Controllers
         [HttpGet("weatherForecast_Id")]
         public IActionResult GetById(int weatherForecast_Id)
         {
-            return Ok (_forecastRepository.GetById(weatherForecast_Id));
+            return Ok(_forecastRepository.GetById(weatherForecast_Id));
         }
         //[HttpPost]
         //public async Task<IActionResult> Create(WeatherForecastRegisterForm weatherregisterform)
@@ -81,14 +81,14 @@ namespace Tag_Go.API.Controllers
             }
             await _hub.Clients.All.SendAsync("receiveweatherupdate", new WeatherForecast
             {
-                Date = DateTime.Now,
+                //Date = DateTime.Now,
                 TemperatureC = _currentWeatherForecast["temperature c : "],
                 Summary = _currentWeatherForecast["summary : "],
                 Description = _currentWeatherForecast["description : "],
                 Humidity = _currentWeatherForecast["humidity : "],
                 Precipitation = _currentWeatherForecast["precipitation : "]
             });
-            return Ok();
+            return Ok(_currentWeatherForecast);
         }
     }
 }

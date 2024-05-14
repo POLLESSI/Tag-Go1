@@ -35,7 +35,7 @@ namespace Tag_Go.API.Controllers
         [HttpPost("create")]
         public async Task<IActionResult> Create(OrganisateurRegisterForm newOrganisateur)
         {
-            if (!ModelState.IsValid) 
+            if (!ModelState.IsValid)
                 return BadRequest();
             if (_organisateurRepository.Create(newOrganisateur.OrganisateurToDal()))
             {
@@ -50,10 +50,10 @@ namespace Tag_Go.API.Controllers
             _organisateurRepository.Delete(organisateur_Id);
             return Ok();
         }
-        [HttpPut("{organisateur_id}")]
-        public IActionResult Update(int organisateur_Id, string companyName, string businessNumber, int nUser_Id, string point)
+        [HttpPut("{organisateur_Id}")]
+        public IActionResult Update(string companyName, string businessNumber, int nUser_Id, string point, int organisateur_Id)
         {
-            _organisateurRepository.Update(organisateur_Id, companyName, businessNumber, nUser_Id, point);
+            _organisateurRepository.Update(companyName, businessNumber, nUser_Id, point, organisateur_Id);
             return Ok();
         }
         [HttpPost("update")]

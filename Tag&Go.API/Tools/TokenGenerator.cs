@@ -8,7 +8,7 @@ namespace Tag_Go.API.Tools
 {
     public class TokenGenerator
     {
-        public static string secretKey = "µpiçaezjrkuyjfgk:ghmkjghmiugl:hjfvtFSDMOifnZAE MOVjkµ$)'éàipornjfd ù)'$piç";
+        public static string secretKey = "µpiçaezjrkuyjfgk:ghmkjghmiugl:hjfvtFSDMOifnZAE MOVjkµ$)'éàipornjfd ù)'$piçh";
 
         public string GenerateToken(NUser nu)
         {
@@ -17,7 +17,7 @@ namespace Tag_Go.API.Tools
             SymmetricSecurityKey securityKey = new(Encoding.UTF8.GetBytes(secretKey));
             SigningCredentials credentials = new(securityKey, SecurityAlgorithms.HmacSha512);
 
-            //Cr&ation du payload (donnée contenues dans le token)
+            //Création du payload (donnée contenues dans le token)
 
             Claim[] userInfo = new[]
              {

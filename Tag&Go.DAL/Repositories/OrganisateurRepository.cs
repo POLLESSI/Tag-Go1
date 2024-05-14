@@ -100,7 +100,7 @@ namespace Tag_Go.DAL.Repositories
             return null;
         }
 
-        public Organisateur? Update(int organisateur_Id, string companyName, string businessNumber, int nUser_Id, string point)
+        public Organisateur? Update(string companyName, string businessNumber, int nUser_Id, string point, int organisateur_Id)
         {
             try
             {

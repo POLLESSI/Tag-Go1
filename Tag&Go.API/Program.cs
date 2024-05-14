@@ -1,9 +1,10 @@
- using Tag_Go.API.Tools;
+using Tag_Go.API.Tools;
 using Tag_Go.DAL.Repositories;
 using Tag_Go.DAL.Interfaces;
 using Tag_Go.BLL;
 using Tag_Go.BLL.Services;
 using Tag_Go.API.Hubs;
+using System.Data;
 using System.Data.SqlClient;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
@@ -42,8 +43,10 @@ builder.Services.AddScoped<IBonusService, BonusService>();
 builder.Services.AddScoped<IBonusRepository, BonusRepository>();
 builder.Services.AddScoped<IChatService, ChatService>();
 builder.Services.AddScoped<IChatRepository, ChatRepository>();
-builder.Services.AddScoped<IEvenementService, EvenementService>();
-builder.Services.AddScoped<IEvenementRepository, EvenementRepository>();
+builder.Services.AddScoped<INEvenementService, NEvenementService>();
+builder.Services.AddScoped<INEvenementRepository, NEvenementRepository>();
+builder.Services.AddScoped<INIconService, NIconService>();
+builder.Services.AddScoped<INIconRepository, NIconRepository>();
 builder.Services.AddScoped<IMapService, MapService>();
 builder.Services.AddScoped<IMapRepository, MapRepository>();
 builder.Services.AddScoped<IMediaItemService, MediaItemService>();
@@ -52,12 +55,14 @@ builder.Services.AddScoped<INUserService, NUserService>();
 builder.Services.AddScoped<INUserRepository, NUserRepository>();
 builder.Services.AddScoped<IOrganisateurService, OrganisateurService>();
 builder.Services.AddScoped<IOrganisateurRepository, OrganisateurRepository>();
-builder.Services.AddScoped<IPersonService, PersonService>();
-builder.Services.AddScoped<IPersonRepository, PersonRepository>();
+builder.Services.AddScoped<INPersonService, NPersonService>();
+builder.Services.AddScoped<INPersonRepository, NPersonRepository>();
 builder.Services.AddScoped<IRecompenseService, RecompenseService>();
 builder.Services.AddScoped<IRecompenseRepository, RecompenseRepository>();
-builder.Services.AddScoped<IVoteService, VoteService>();
-builder.Services.AddScoped<IVoteRepository, VoteRepository>();
+builder.Services.AddScoped<INVoteService, NVoteService>();
+builder.Services.AddScoped<INVoteRepository, NVoteRepository>();
+builder.Services.AddScoped<IWeatherForecastService, WeatherForecastService>();
+builder.Services.AddScoped<IWeatherForecastRepository, WeatherForecastRepository>();
 
 // Ajout SignalR
 
@@ -69,15 +74,16 @@ builder.Services.AddSingleton<ActivityHub>();
 builder.Services.AddSingleton<AvatarHub>();
 builder.Services.AddSingleton<BonusHub>();
 builder.Services.AddSingleton<ChatHub>();
-builder.Services.AddSingleton<EvenementHub>();
-builder.Services.AddSingleton<IconHub>();
+builder.Services.AddSingleton<NEvenementHub>();
+builder.Services.AddSingleton<NIconHub>();
 builder.Services.AddSingleton<MapHub>();
 builder.Services.AddSingleton<MediaItemHub>();
 builder.Services.AddSingleton<NUserHub>();
 builder.Services.AddSingleton<OrganisateurHub>();
-builder.Services.AddSingleton<PersonHub>();
+builder.Services.AddSingleton<NPersonHub>();
 builder.Services.AddSingleton<RecompenseHub>();
-builder.Services.AddSingleton<VoteHub>();
+builder.Services.AddSingleton<NVoteHub>();
+builder.Services.AddSingleton<WeatherForecastHub>();
 
 // Token Generator
 
@@ -109,7 +115,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment())
 {
     //app.UseExceptionHandler("/Error");
     //// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
@@ -139,18 +145,15 @@ app.MapHub<ActivityHub>("/activityhub");
 app.MapHub<AvatarHub>("/avatarhub");
 app.MapHub<BonusHub>("/bonushub");
 app.MapHub<ChatHub>("/chathub");
-app.MapHub<EvenementHub>("/evenementhub");
-app.MapHub<IconHub>("/iconhub");
+app.MapHub<NEvenementHub>("/nevenementhub");
+app.MapHub<NIconHub>("/niconhub");
 app.MapHub<MapHub>("/map");
 app.MapHub<MediaItemHub>("/mediaitemhub");
 app.MapHub<NUserHub>("/nuserhub");
 app.MapHub<OrganisateurHub>("/organisateurhub");
-app.MapHub<PersonHub>("/personhub");
+app.MapHub<NPersonHub>("/personhub");
 app.MapHub<RecompenseHub>("/recompensehub");
-app.MapHub<VoteHub>("/votehub");
-
-// Optional (if razor)
-
-//app.MapRazorPages();
+app.MapHub<NVoteHub>("/nvotehub");
+app.MapHub<WeatherForecastHub>("/weatherforecasthub");
 
 app.Run();

@@ -14,6 +14,6 @@ namespace Tag_Go.DAL.Interfaces
         IEnumerable<Avatar?> GetAll();
         Avatar? GetById(int avatar_Id);
         Avatar? Delete(int avatar_Id);
-        Avatar? Update(int avatar_Id, string avatarName, string avatarUrl, string description, Guid nUser_Id);
+        Avatar? Update(int avatar_Id, string avatarName, string avatarUrl, string description);
     }
 }

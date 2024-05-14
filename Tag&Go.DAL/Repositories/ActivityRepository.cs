@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 namespace Tag_Go.DAL.Repositories
 {
     public class ActivityRepository : IActivityRepository
-    { 
+    {
         private readonly SqlConnection _connection;
 
         public ActivityRepository(SqlConnection connection)
@@ -41,7 +41,7 @@ namespace Tag_Go.DAL.Repositories
                 Console.WriteLine($"Error Encoding New Activity : {ex.ToString}");
             }
             return false;
-            
+
         }
 
         public void CreateActivity(Activity activity)
@@ -57,7 +57,7 @@ namespace Tag_Go.DAL.Repositories
                 parameters.Add("@PosLat", activity.PosLat);
                 parameters.Add("@PosLong", activity.PosLong);
                 parameters.Add("@Organisateur_Id", activity.Organisateur_Id);
-                _connection.Execute(sql, activity);
+                _connection.Execute(sql, parameters);
             }
             catch (Exception ex)
             {

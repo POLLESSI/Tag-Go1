@@ -5,9 +5,7 @@ namespace Tag_Go.API.Dtos.Forms
 {
     public class OrganisateurUpdate
     {
-        [Required]
-        [DisplayName("Id Organisator : ")]
-        public int Organisateur_Id { get; set; }
+        
         [Required]
         [MinLength(2)]
         [MaxLength(32)]
@@ -24,5 +22,8 @@ namespace Tag_Go.API.Dtos.Forms
         [MaxLength(8)]
         [DisplayName("Points : ")]
         public string? Point { get; set; }
+        [Required]
+        [DisplayName("Id Organisator : ")]
+        public int Organisateur_Id { get; set; }
     }
 }

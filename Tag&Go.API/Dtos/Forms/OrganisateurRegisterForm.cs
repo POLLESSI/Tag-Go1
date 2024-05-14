@@ -17,7 +17,7 @@ namespace Tag_Go.API.Dtos.Forms
         public string? BusinessNumber { get; set; }
         [Required]
         [DisplayName("Guid User : ")]
-        public Guid NUser_Id { get; set; }
+        public int NUser_Id { get; set; }
         [MinLength(1)]
         [MaxLength(8)]
         [DisplayName("Points : ")]

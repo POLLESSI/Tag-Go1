@@ -24,12 +24,12 @@ namespace Tag_Go.DAL.Repositories
         {
             try
             {
-                string sql = "INSERT INTO NUser (Email, Pwd, Person_Id, Role_Id, Avatar_Id, Point) VALUES " +
-                    "(@email, CONVERT(varbinary(64), @Pwd), @Person_Id, @Role_Id, @Avatar_Id, @Point)";
+                string sql = "INSERT INTO NUser (Email, Pwd, NPerson_Id, Role_Id, Avatar_Id, Point) VALUES " +
+                    "(@email, CONVERT(varbinary(64), @Pwd), @NPerson_Id, @Role_Id, @Avatar_Id, @Point)";
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@Email", nUser.Email);
                 parameters.Add("@Pwd", nUser.Pwd);
-                parameters.Add("@Person_Id", nUser.Person_Id);
+                parameters.Add("@NPerson_Id", nUser.NPerson_Id);
                 parameters.Add("@Role_Id", nUser.Role_Id);
                 parameters.Add("@Avatar_Id", nUser.Avatar_Id);
                 parameters.Add("@Point", nUser.Point);
@@ -47,12 +47,12 @@ namespace Tag_Go.DAL.Repositories
         {
             try
             {
-                string sql = "INSERT INTO NUser (Email, Pwd, Person_Id, Role_Id, Avatar_Id, Point) " +
-                    "VALUES (@email, CONVERT(varbinary(64), @pwd), @person_Id, @role_Id, @avatar_Id, @point)";
+                string sql = "INSERT INTO NUser (Email, Pwd, NPerson_Id, Role_Id, Avatar_Id, Point) " +
+                    "VALUES (@email, CONVERT(varbinary(64), @pwd), @Nperson_Id, @role_Id, @avatar_Id, @point)";
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@email", nUser.Email);
                 parameters.Add("@pwd", nUser.Pwd);
-                parameters.Add("@person_Id", nUser.Person_Id);
+                parameters.Add("@Nperson_Id", nUser.NPerson_Id);
                 parameters.Add("@role_Id", nUser.Role_Id);
                 parameters.Add("@avatar_Id", nUser.Avatar_Id);
                 parameters.Add("@point", nUser.Point);
@@ -66,7 +66,7 @@ namespace Tag_Go.DAL.Repositories
             }
         }
 
-        public NUser? Delete(Guid nUser_Id)
+        public NUser? Delete(int nUser_Id)
         {
             try
             {
@@ -89,7 +89,7 @@ namespace Tag_Go.DAL.Repositories
             return _connection.Query<NUser?>(sql);
         }
 
-        public NUser? GetById(Guid nUser_Id)
+        public NUser? GetById(int nUser_Id)
         {
             try
             {
@@ -124,16 +124,16 @@ namespace Tag_Go.DAL.Repositories
             return null;
         }
 
-        public bool RegisterNUser(string? email, string? pwd, int person_Id, string? role_Id, int avatar_Id, string? point)
+        public bool RegisterNUser(string? email, string? pwd, int nPerson_Id, string? role_Id, int avatar_Id, string? point)
         {
             try
             {
-                string sql = "INSERT INTO NUser (Email, Pwd, Person_Id, Role_Id, Avatar_Id, Point) " +
-                "VALUES (@email, CONVERT(varbinary(64), @pwd), @person_Id, @role_Id, @avatar_Id, @point)";
+                string sql = "INSERT INTO NUser (Email, Pwd, NPerson_Id, Role_Id, Avatar_Id, Point) " +
+                "VALUES (@email, CONVERT(varbinary(64), @pwd), @nPerson_Id, @role_Id, @avatar_Id, @point)";
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@email", email);
                 parameters.Add("@pwd", pwd);
-                parameters.Add("@person_Id", person_Id);
+                parameters.Add("@nPerson_Id", nPerson_Id);
                 parameters.Add("@role_Id", role_Id);
                 parameters.Add("@avatar_Id", avatar_Id);
                 parameters.Add("@point", point);
@@ -148,7 +148,7 @@ namespace Tag_Go.DAL.Repositories
             return false;
         }
 
-        public void SetRole(Guid nUser_Id, string? role_Id)
+        public void SetRole(int nUser_Id, string? role_Id)
         {
             try
             {
@@ -165,16 +165,16 @@ namespace Tag_Go.DAL.Repositories
             }
         }
 
-        public NUser? Update(Guid nUser_Id, string? email, string? pwd, int person_Id, string? role_Id, int avatar_Id, string? point)
+        public NUser? Update(int nUser_Id, string? email, string? pwd, int nPerson_Id, string? role_Id, int avatar_Id, string? point)
         {
             try
             {
-                string sql = "UPDATE NUser SET Email = @email, Pwd = CONVERT(varbinary(64), @pwd), Person_Id = @person_Id, Role_Id = @role_Id WHERE NUser_Id = @nUser_Id";
+                string sql = "UPDATE NUser SET Email = @email, Pwd = CONVERT(varbinary(64), @pwd), NPerson_Id = @nPerson_Id, Role_Id = @role_Id WHERE NUser_Id = @nUser_Id";
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@nUser_Id", nUser_Id);
                 parameters.Add("@email", email);
                 parameters.Add("@pwd", pwd);
-                parameters.Add("@person_Id", person_Id);
+                parameters.Add("@nPerson_Id", nPerson_Id);
                 parameters.Add("@role_Id", role_Id);
                 return _connection.QueryFirst<NUser>(sql, parameters);
             }

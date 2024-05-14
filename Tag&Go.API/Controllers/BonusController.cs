@@ -14,7 +14,7 @@ namespace Tag_Go.API.Controllers
     {
         private readonly IBonusRepository _bonusRepository;
         private readonly BonusHub _bonusHub;
-        private readonly Dictionary<string, string>  _currentBonus = new Dictionary<string, string>();
+        private readonly Dictionary<string, string> _currentBonus = new Dictionary<string, string>();
 
         public BonusController(IBonusRepository bonusRepository, BonusHub bonusHub)
         {
@@ -26,7 +26,7 @@ namespace Tag_Go.API.Controllers
         {
             return Ok(_bonusRepository.GetAll());
         }
-        [HttpGet("{bonus_id}")]
+        [HttpGet("{bonus_Id}")]
         public IActionResult GetById(int bonus_Id)
         {
             return Ok(_bonusRepository.GetById(bonus_Id));
@@ -45,13 +45,13 @@ namespace Tag_Go.API.Controllers
             }
             return BadRequest("Registration Error");
         }
-        [HttpDelete("{bonus_id}")]
+        [HttpDelete("{bonus_Id}")]
         public IActionResult Delete(int bonus_Id)
         {
             _bonusRepository.Delete(bonus_Id);
             return Ok();
         }
-        [HttpPut("bonus_id")]
+        [HttpPut("bonus_Id")]
         public IActionResult Update(int bonus_Id, string bonusType, string bonusDescription, string application, string granted)
         {
             _bonusRepository.Update(bonus_Id, bonusType, bonusDescription, application, granted);

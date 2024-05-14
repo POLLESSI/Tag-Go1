@@ -7,7 +7,7 @@ namespace Tag_Go.API.Dtos.Forms
     {
         [Required(ErrorMessage = "Id of user is required")]
         [DisplayName("User Guid : ")]
-        public Guid NUser_Id { get; set; }
+        public int NUser_Id { get; set; }
         [Required(ErrorMessage = "Id of the new rôle is required")]
         [MaxLength(1)]
         [DisplayName("Id rôle : ")]

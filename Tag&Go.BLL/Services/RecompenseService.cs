@@ -80,11 +80,11 @@ namespace Tag_Go.BLL.Services
             return null;
         }
 
-        public Recompense? Update(int recompense_Id, string definition, string point, string implication, string granted)
+        public Recompense? Update(string definition, string point, string implication, string granted, int recompense_Id)
         {
             try
             {
-                var UpdateRecompense = _recompenseRepository.Update(recompense_Id, definition, point, implication, granted);
+                var UpdateRecompense = _recompenseRepository.Update(definition, point, implication, granted, recompense_Id);
                 return UpdateRecompense;
             }
             catch (System.ComponentModel.DataAnnotations.ValidationException ex)

@@ -27,7 +27,7 @@ namespace Tag_Go.API.Controllers
         {
             return Ok(_mediaItemRepository.GetAll());
         }
-        [HttpGet("{mediaitem_id}")]
+        [HttpGet("{mediaItem_Id}")]
         public ActionResult GetById(int mediaItem_Id)
         {
             return Ok(_mediaItemRepository.GetById(mediaItem_Id));
@@ -35,7 +35,7 @@ namespace Tag_Go.API.Controllers
         [HttpPost("create")]
         public async Task<IActionResult> Create(MediaItemRegisterForm newMediaItem)
         {
-            if (!ModelState.IsValid) 
+            if (!ModelState.IsValid)
                 return BadRequest();
             if (_mediaItemRepository.Create(newMediaItem.MediaItemToDal()))
             {
@@ -44,13 +44,13 @@ namespace Tag_Go.API.Controllers
             }
             return BadRequest("Registration Horror");
         }
-        [HttpDelete("{mediaitem_id}")]
+        [HttpDelete("{mediaItem_Id}")]
         public IActionResult Delete(int mediaItem_Id)
         {
             _mediaItemRepository.Delete(mediaItem_Id);
             return Ok();
         }
-        [HttpPut("{mediaitem_id}")]
+        [HttpPut("{mediaItem_Id}")]
         public IActionResult Update(int mediaItem_Id, string mediaType, string urlItem, string description)
         {
             _mediaItemRepository.Update(mediaItem_Id, mediaType, urlItem, description);

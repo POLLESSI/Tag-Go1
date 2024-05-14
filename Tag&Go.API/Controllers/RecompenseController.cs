@@ -27,7 +27,7 @@ namespace Tag_Go.API.Controllers
         {
             return Ok(_recompenseRepository.GetAll());
         }
-        [HttpGet("{recompense_id}")]
+        [HttpGet("{recompense_Id}")]
         public ActionResult GetById(int recompense_Id)
         {
             return Ok(_recompenseRepository.GetById(recompense_Id));
@@ -35,7 +35,7 @@ namespace Tag_Go.API.Controllers
         [HttpPost("create")]
         public async Task<IActionResult> Create(RecompenseRegisterForm recompense)
         {
-            if (!ModelState.IsValid) 
+            if (!ModelState.IsValid)
                 return BadRequest();
             if (_recompenseRepository.Create(recompense.RecompenseToDal()))
             {
@@ -44,10 +44,10 @@ namespace Tag_Go.API.Controllers
             }
             return BadRequest("Registration Error");
         }
-        [HttpPut("{recompense_id}")]
-        public IActionResult Update(int recompense_Id, string definition, string point, string implication, string granted)
+        [HttpPut("{recompense_Id}")]
+        public IActionResult Update(string definition, string point, string implication, string granted, int recompense_Id)
         {
-            _recompenseRepository.Update(recompense_Id, definition, point, implication, granted);
+            _recompenseRepository.Update(definition, point, implication, granted, recompense_Id);
             return Ok();
         }
         [HttpPost("update")]

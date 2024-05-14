@@ -28,7 +28,7 @@ namespace Tag_Go.API.Controllers
         {
             return Ok(_mapRepository.GetAll());
         }
-        [HttpGet("{map_id}")]
+        [HttpGet("{map_Id}")]
         public IActionResult GetById(int map_Id)
         {
             return Ok(_mapRepository.GetById(map_Id));
@@ -36,7 +36,7 @@ namespace Tag_Go.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(MapRegisterForm map)
         {
-            if (!ModelState.IsValid) 
+            if (!ModelState.IsValid)
                 return BadRequest();
             if (_mapRepository.Create(map.MapToDal()))
             {
@@ -45,7 +45,7 @@ namespace Tag_Go.API.Controllers
             }
             return BadRequest("Registration Error");
         }
-        [HttpDelete("{map_id}")]
+        [HttpDelete("{map_Id}")]
         public IActionResult Delete(int map_Id)
         {
             _mapRepository.Delete(map_Id);

@@ -14,7 +14,7 @@ namespace Tag_Go.API.Dtos.Forms
         [DisplayName("Activity Name : ")]
         public string? ActivityName { get; set; }
         [Required]
-        [MinLength (4)]
+        [MinLength(4)]
         [MaxLength(64)]
         [DisplayName("Activity Address : ")]
         public string? ActivityAddress { get; set; }

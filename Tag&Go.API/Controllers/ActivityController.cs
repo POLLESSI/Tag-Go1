@@ -27,7 +27,7 @@ namespace Tag_Go.API.Controllers
         {
             return Ok(_activityRepository.GetAll());
         }
-        [HttpGet("{activity_id}")]
+        [HttpGet("{activity_Id}")]
         public IActionResult GetById(int activity_Id)
         {
             return Ok(_activityRepository.GetById(activity_Id));
@@ -46,13 +46,13 @@ namespace Tag_Go.API.Controllers
             }
             return BadRequest("Registration Error");
         }
-        [HttpDelete("{activity_id}")]
+        [HttpDelete("{activity_Id}")]
         public IActionResult Delete(int activity_Id)
         {
             _activityRepository.Delete(activity_Id);
             return Ok();
         }
-        [HttpPut("{ectivity_id}")]
+        [HttpPut("{activity_Id}")]
         public IActionResult Update(int activity_Id, string activityName, string activityAddress, string activityDescription, string ComplementareInformation, string posLat, string posLong, int organisateur_Id)
         {
             _activityRepository.Update(activity_Id, activityName, activityAddress, activityDescription, ComplementareInformation, posLat, posLong, organisateur_Id);

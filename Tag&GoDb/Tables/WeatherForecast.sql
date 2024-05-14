@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[WeatherForecast]
 (
 	[WeatherForecast_Id] INT IDENTITY,
-	[Date] SMALLDATETIME NOT NULL,
+	[Date] SMALLDATETIME NULL DEFAULT GETDATE(),
 	[TemperatureC] NVARCHAR(4) NOT NULL,
 	[TemperatureF] NVARCHAR(4) NULL,
 	[Summary] NVARCHAR(256) NOT NULL,

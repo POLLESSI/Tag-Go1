@@ -80,11 +80,11 @@ namespace Tag_Go.BLL.Services
             return null;
         }
 
-        public Organisateur? Update(int organisateur_Id, string companyName, string businessNumber, int nUser_Id, string point)
+        public Organisateur? Update(string companyName, string businessNumber, int nUser_Id, string point, int organisateur_Id)
         {
             try
             {
-                var UpdateOrganisateur = _organisateurRepository.Update(organisateur_Id, companyName, businessNumber, nUser_Id, point);
+                var UpdateOrganisateur = _organisateurRepository.Update(companyName, businessNumber, nUser_Id, point, organisateur_Id);
                 return UpdateOrganisateur;
             }
             catch (System.ComponentModel.DataAnnotations.ValidationException ex)

@@ -13,11 +13,11 @@ namespace Tag_Go.BLL.Interfaces
         bool Create(NUser nUser);
         void CreateNUser(NUser nUser);
         IEnumerable<NUser?> GetAll();
-        NUser? GetById(Guid nUser_Id);
-        NUser? Delete(Guid nUser_Id);
-        NUser? Update(Guid nUser_Id, string? email, string? pwd, int person_Id, string? role_Id, int avatar_Id, string? point);
-        bool RegisterNUser(string? email, string? pwd, int person_Id, string? role_Id, int avatar_Id, string? point);
+        NUser? GetById(int nUser_Id);
+        NUser? Delete(int nUser_Id);
+        NUser? Update(int nUser_Id, string? email, string? pwd, int nPerson_Id, string? role_Id, int avatar_Id, string? point);
+        bool RegisterNUser(string? email, string? pwd, int nPerson_Id, string? role_Id, int avatar_Id, string? point);
         NUser? LoginNUser(string? email, string? pwd);
-        void SetRole(Guid nUser_Id, string? role_Id);
+        void SetRole(int nUser_Id, string? role_Id);
     }
 }

@@ -100,7 +100,7 @@ namespace Tag_Go.DAL.Repositories
             return null;
         }
 
-        public Recompense? Update(int recompense_Id, string definition, string point, string implication, string granted)
+        public Recompense? Update(string definition, string point, string implication, string granted, int recompense_Id)
         {
             try
             {

@@ -23,13 +23,12 @@ namespace Tag_Go.DAL.Repositories
         {
             try
             {
-                string sql = "INSERT INTO Avatar (AvatarName, AvatarUrl Description, NUser_Id) VALUES " +
-                    "(@avatarName, @avatarUrl, @description, @nUser_Id)";
+                string sql = "INSERT INTO Avatar (AvatarName, AvatarUrl, Description) VALUES " +
+                    "(@avatarName, @avatarUrl, @description)";
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@avatarName", avatar.AvatarName);
                 parameters.Add("@avatarUrl", avatar.AvatarUrl);
                 parameters.Add("@description", avatar.Description);
-                parameters.Add("@nUser_Id", avatar.NUser_Id);
                 return _connection.Execute(sql, parameters) > 0;
             }
             catch (Exception ex)
@@ -44,13 +43,12 @@ namespace Tag_Go.DAL.Repositories
         {
             try
             {
-                string sql = "INSERT INTO Avatar (AvatarName, AvatarUrl, Description, NUser_Id)" +
-                    "VALUES (@AvatarName, @AvatarUrl, @Description, @NUser_Id)";
+                string sql = "INSERT INTO Avatar (AvatarName, AvatarUrl, Description)" +
+                    "VALUES (@AvatarName, @AvatarUrl, @Description)";
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@AvatarName", avatar.AvatarName);
                 parameters.Add("@AvatarUrl", avatar.AvatarUrl);
                 parameters.Add("@Description", avatar.Description);
-                parameters.Add("@NUser_id", avatar.NUser_Id);
                 _connection.Execute(sql, parameters);
             }
             catch (Exception ex)
@@ -99,16 +97,15 @@ namespace Tag_Go.DAL.Repositories
             return null;
         }
 
-        public Avatar? Update(int avatar_Id, string avatarName, string avatarUrl, string description, Guid nUser_Id)
+        public Avatar? Update(int avatar_Id, string avatarName, string avatarUrl, string description)
         {
             try
             {
-                string sql = "UPDATE Avatar SET AvatarName = @avatarName, AvatarUrl = @avatarUrl, Description = @description, NUser_Id = @nUser_Id WHERE Avatar_Id = @avatar_Id";
+                string sql = "UPDATE Avatar SET AvatarName = @avatarName, AvatarUrl = @avatarUrl, Description = @description WHERE Avatar_Id = @avatar_Id";
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@avatarName", avatarName);
                 parameters.Add("@avatarUrl", avatarUrl);
                 parameters.Add("@description", description);
-                parameters.Add("@nUser_Id", nUser_Id);
                 return _connection.QueryFirst<Avatar?>(sql, parameters);
             }
             catch (System.ComponentModel.DataAnnotations.ValidationException ex)

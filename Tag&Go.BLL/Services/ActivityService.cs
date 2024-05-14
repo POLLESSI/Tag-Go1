@@ -66,11 +66,11 @@ namespace Tag_Go.BLL.Services
             return _activityRepository.GetAll();
         }
 
-        public Activity? GetById(int Activity_Id)
+        public Activity? GetById(int activity_Id)
         {
             try
             {
-                return _activityRepository.GetById(Activity_Id);
+                return _activityRepository.GetById(activity_Id);
             }
             catch (Exception ex)
             {
@@ -80,11 +80,12 @@ namespace Tag_Go.BLL.Services
             return null;
         }
 
-        public Activity? Update(int Activity_Id, string activityName, string activityAddress, string activityDescription, string complementareInformation, string posLat, string posLong, int organisateur_Id)
+        public Activity? Update(int activity_Id, string activityName, string activityAddress, string activityDescription, string complementareInformation, string posLat, string posLong, int organisateur_Id)
         {
             try
             {
-                var UpdateActivity = _activityRepository.Update(Activity_Id, activityName, activityAddress, activityDescription, complementareInformation, posLat, posLong, organisateur_Id);
+                var UpdateActivity = _activityRepository.Update(activity_Id, activityName, activityAddress, activityDescription, complementareInformation, posLat, posLong, organisateur_Id);
+                return UpdateActivity;
             }
             catch (System.ComponentModel.DataAnnotations.ValidationException ex)
             {

@@ -24,7 +24,7 @@ namespace Tag_Go.API.Dtos.Forms
         public string? SecondPwd { get; set; }
         [Required(ErrorMessage = "Person's Id is required ! ")]
         [DisplayName("Person's Id : ")]
-        public int Person_Id { get; set; }
+        public int NPerson_Id { get; set; }
         [Required(ErrorMessage = "Rôle's Id is required ! ")]
         [MaxLength(1)]
         [DisplayName("Rôle's Id : ")]

@@ -13,8 +13,8 @@ namespace Tag_Go.BLL.Interfaces
         bool Create(Activity activity);
         void CreateActivity(Activity activity);
         IEnumerable<Activity?> GetAll();
-        Activity? GetById(int Activity_Id);
-        Activity? Delete(int Activity_Id);
-        Activity? Update(int Activity_Id, string activityName, string activityAddress, string activityDescription, string complementareInformation, string posLat, string posLong, int organisateur_Id);
+        Activity? GetById(int activity_Id);
+        Activity? Delete(int activity_Id);
+        Activity? Update(int activity_Id, string activityName, string activityAddress, string activityDescription, string complementareInformation, string posLat, string posLong, int organisateur_Id);
     }
 }

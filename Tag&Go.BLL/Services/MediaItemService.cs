@@ -13,7 +13,7 @@ using System.Security.Cryptography.X509Certificates;
 namespace Tag_Go.BLL.Services
 {
     public class MediaItemService : IMediaItemService
-    {  
+    {
         private readonly IMediaItemRepository _mediaItemRepository;
 
         public MediaItemService(IMediaItemRepository mediaItemRepository)

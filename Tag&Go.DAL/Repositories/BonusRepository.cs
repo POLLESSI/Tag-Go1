@@ -28,7 +28,7 @@ namespace Tag_Go.DAL.Repositories
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@BonusType", bonus.BonusType);
                 parameters.Add("@BonusDescription", bonus.BonusDescription);
-                parameters.Add("@Applications", bonus.Application);
+                parameters.Add("@Application", bonus.Application);
                 parameters.Add("@Granted", bonus.Granted);
                 return _connection.Execute(sql, parameters) > 0;
             }
